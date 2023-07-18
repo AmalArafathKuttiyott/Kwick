@@ -10,6 +10,7 @@ import (
 )
 
 func Routes(r *gin.Engine) {
+
 	// Admin routes without authorization
 	r.POST("/admin/sign-in", adminController.Signin)
 	// Group of admin routes with authorization

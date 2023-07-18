@@ -17,5 +17,4 @@ func HandleStaticFiles(ctx *gin.Context) {
 
 	// Serve the static files
 	ctx.File(fullPath)
-
 }
