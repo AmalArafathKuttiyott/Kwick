@@ -45,3 +45,6 @@ func Signin(ctx *gin.Context) {
 	}
 	ctx.JSON(http.StatusOK, gin.H{"Message": "Sign-in successful", "Token": token, "User": user.FirstName + " " + user.MiddleName + " " + user.LastName})
 }
+func GithubResponse(ctx *gin.Context) {
+	ctx.JSON(http.StatusOK, "Go to 'github.com/amalarafathkuttiyott/kwick' to find more about the project")
+}
