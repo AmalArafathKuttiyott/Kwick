@@ -17,7 +17,7 @@ func Routes(r *gin.Engine) {
 	r.POST("/admin/sign-in", adminController.Signin)
 	// Group of admin routes with authorization
 	admin := r.Group("/admin")
-	// admin.Use(middleware.AdminAuthorization)
+	admin.Use(middleware.AdminAuthorization)
 	{
 		// Dashboard
 		admin.GET("/dashboard", adminController.GetDashboard)
@@ -78,7 +78,7 @@ func Routes(r *gin.Engine) {
 	r.POST("/sign-in", userController.UserSignin)
 
 	user := r.Group("/user")
-	// user.Use(middleware.UserAuthorization)
+	user.Use(middleware.UserAuthorization)
 	{
 		user.GET("/homepage", userController.GetHomepage)
 		user.GET("/products", adminController.GetAllProducts)
